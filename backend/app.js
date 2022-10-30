@@ -8,7 +8,6 @@ const passport = require("passport");
 const Web3Strategy = require("passport-dapp-web3");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
-
 //npm i cors, npm i web3, npm i express-jwt, npm i passport-dapp-web3
 
 var indexRouter = require('./routes/index');
