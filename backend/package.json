@@ -17,6 +17,8 @@
     "nodemon": "^2.0.20",
     "passport": "^0.6.0",
     "passport-dapp-web3": "^1.0.4",
+    "swagger-autogen": "^2.22.0",
+    "swagger-ui-express": "^4.5.0",
     "web3": "^1.8.0"
   }
 }

@@ -4,11 +4,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const passport = require("passport");
+const swaggerUi = require('swagger-ui-express'),
+swaggerDocument = require('./swagger.json');
 
 const Web3Strategy = require("passport-dapp-web3");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
-//npm i cors, npm i web3, npm i express-jwt, npm i passport-dapp-web3
+//npm i cors, npm i web3, npm i express-jwt, npm i passport, npm i passport-dapp-web3
+
+const swaggerAutogen = require('swagger-autogen')()
+
+const outputFile = './swagger_output.json'
+// const endpointsFiles = ['./routers/personRouter.js']
+
+// swaggerAutogen(outputFile, endpointsFiles)
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -29,6 +38,12 @@ app.use(express.urlencoded({extended: true}));
 app.use(passport.initialize({}));
 app.use(cors());
 
+// Swagger
+app.use(
+  '/api-docs',
+  swaggerUi.serve, 
+  swaggerUi.setup(swaggerDocument)
+);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

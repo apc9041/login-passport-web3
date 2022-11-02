@@ -1,0 +1,71 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Maki Neko",
+    "description": "Maki Neko Project Application API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": [],
+  "basePath": "localhost:5000",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/users/login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "reportID": {
+                  "type": "integer"
+                }
+              },
+              "example": {
+                "address": "0x9C7F84380A95e227d1a5f3c892536DFEA7653cE8",
+                "msg": "Some Message",
+                "signed": "0x396a9b19cf4c75de0f2c91dd0ba99db4edeb7798869cbd3c810c10bce28dc9e3413b06aa090e6922f7bc24d189f4dc76dd410e9623cbe6eb322d0ea0f3c238341b"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "examples": {
+              "application/json": [
+                {
+                  "user": {
+                      "id": 0,
+                      "address": "0x9C7F84380A95e227d1a5f3c892536DFEA7653cE8",
+                      "message": "Some Message",
+                      "signed": "0x396a9b19cf4c75de0f2c91dd0ba99db4edeb7798869cbd3c810c10bce28dc9e3413b06aa090e6922f7bc24d189f4dc76dd410e9623cbe6eb322d0ea0f3c238341b"
+                  },
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwiYWRkcmVzcyI6IjB4OUM3Rjg0MzgwQTk1ZTIyN2QxYTVmM2M4OTI1MzZERkVBNzY1M2NFOCIsIm1lc3NhZ2UiOiJTb21lIE1lc3NhZ2UiLCJzaWduZWQiOiIweDM5NmE5YjE5Y2Y0Yzc1ZGUwZjJjOTFkZDBiYTk5ZGI0ZWRlYjc3OTg4NjljYmQzYzgxMGMxMGJjZTI4ZGM5ZTM0MTNiMDZhYTA5MGU2OTIyZjdiYzI0ZDE4OWY0ZGM3NmRkNDEwZTk2MjNjYmU2ZWIzMjJkMGVhMGYzYzIzODM0MWIiLCJpYXQiOjE2NjczNjA4MzF9.g5VJGYB9zEKh7gNSyPCUOUZmHv_onjfczuSkZGtKGVo"
+              }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
